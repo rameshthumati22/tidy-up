@@ -26,7 +26,7 @@ public class RevokeWorkRequestControllerTest
   public void deleteWorkRequestById() {
 
     revokeWorkRequestController
-        .call(workRequestTestData.WORK_REQUEST_ID.toString());
+        .call(workRequestTestData.WORK_REQUEST_ID);
 
     Mockito.verify(workRequestRepository)
         .deleteById(workRequestTestData.WORK_REQUEST_ID);

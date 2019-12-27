@@ -2,6 +2,7 @@ package com.kodekonveyor.work_request.revoke;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 
 import com.kodekonveyor.work_request.WorkRequestRepository;
 
@@ -11,8 +12,9 @@ public class RevokeWorkRequestController {
   @Autowired
   private WorkRequestRepository workRequestRepository;
 
-  public void call(final String workRequestId) {
-    workRequestRepository.deleteById(Long.parseLong(workRequestId));
+  @DeleteMapping("/workRequest/remove/@workRequestId")
+  public void call(final Long workRequestId) {
+    workRequestRepository.deleteById(workRequestId);
   }
 
 }
