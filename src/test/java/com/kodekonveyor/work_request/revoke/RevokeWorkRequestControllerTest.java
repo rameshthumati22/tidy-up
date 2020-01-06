@@ -12,6 +12,7 @@ import org.mockito.quality.Strictness;
 
 import com.kodekonveyor.annotations.TestedBehaviour;
 import com.kodekonveyor.annotations.TestedService;
+import com.kodekonveyor.work_request.WorkRequestEntityTestData;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -26,10 +27,10 @@ public class RevokeWorkRequestControllerTest
   public void deleteWorkRequestById() {
 
     revokeWorkRequestController
-        .call(workRequestTestData.WORK_REQUEST_ID);
+        .call(WorkRequestEntityTestData.WORK_REQUEST_ID);
 
     Mockito.verify(workRequestRepository)
-        .deleteById(workRequestTestData.WORK_REQUEST_ID);
+        .deleteById(WorkRequestEntityTestData.WORK_REQUEST_ID);
 
   }
 
