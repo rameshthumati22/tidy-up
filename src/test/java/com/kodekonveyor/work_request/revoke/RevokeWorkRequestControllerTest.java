@@ -30,8 +30,7 @@ public class RevokeWorkRequestControllerTest
         .call(WorkRequestEntityTestData.WORK_REQUEST_ID);
 
     Mockito.verify(workRequestRepository)
-        .deleteById(WorkRequestEntityTestData.WORK_REQUEST_ID);
+        .delete(WorkRequestEntityTestData.get());
 
   }
-
 }
