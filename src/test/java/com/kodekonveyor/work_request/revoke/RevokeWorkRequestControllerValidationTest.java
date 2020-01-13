@@ -1,8 +1,5 @@
 package com.kodekonveyor.work_request.revoke;
 
-import static org.mockito.Mockito.verify;
-
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -25,21 +22,6 @@ import com.kodekonveyor.work_request.open.OpenWorkRequestControllerTestData;
 @TestedService("revokeWorkRequestController")
 public class RevokeWorkRequestControllerValidationTest
     extends RevokeWorkRequestControllerTestBase {
-
-  @Override
-  @BeforeEach
-  void setUp() {
-    super.setUp();
-    revokeWorkRequestController
-        .call(WorkRequestEntityTestData.WORK_REQUEST_ID);
-  }
-
-  @Test
-  @DisplayName("Work request entity is saved")
-  public void test5() {
-
-    verify(workRequestRepository).delete(WorkRequestEntityTestData.get());
-  }
 
   @Test
   @DisplayName(
